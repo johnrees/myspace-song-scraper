@@ -1,8 +1,0 @@
-# Dependencies
-To use this you will need the following libraries
-* [rtmpdump](http://rtmpdump.mplayerhq.hu/)
-* [ffmpeg](http://www.ffmpeg.org/download.html)
-For Mac users I'd recommend installing with either MacPorts or the newer, awesome, [Homebrew](https://github.com/mxcl/homebrew)
-
-# Notes
-I currently use a cronjob and background daemons to enqueue the archives and purge them after an hour on the server
