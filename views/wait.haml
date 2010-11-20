@@ -1,0 +1,6 @@
+%h1 Please Wait
+%p Check back on this page
+- if @archive
+  %a{:href => "/download/#{params[:uuid]}"} Your file is ready
+- else
+  Please wait

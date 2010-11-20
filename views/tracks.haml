@@ -1,0 +1,13 @@
+%form{:action => '/track', :method => "POST"}
+  %fieldset
+    %legend Tracks
+    %ul
+    - @tracks.each do |track|
+      %li  
+        %input{:id => "id#{track.id}", :type => "checkbox", :name => "tracks[#{track.id}]", :checked => 'checked' }
+        %label{:for => "id#{track.id}"}= "#{track.title} (#{track.duration})"
+  
+    %input{:type => 'submit', :value => 'Download Selected Tracks' }
+
+    / %p
+    /   %a{:href => 'zip'} Download all as a .zip archive

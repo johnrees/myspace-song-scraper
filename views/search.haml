@@ -1,0 +1,17 @@
+%form{:method=> 'POST', :action => '/artist'}
+  %input{:type => 'search', :placeholder=>"http://myspace.com/", :name => 'artist'}
+  %input{:type => 'submit', :value => 'find'}
+
+%div#results
+
+%script{:type=>"text/javascript", :src=>"https://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"}
+:javascript
+  $(document).ready(function() {
+    $('form').submit(function() {
+      $('#results').html("Loading Tracks...");
+      $.post("/artist", $(this).serialize(), function(data) {
+        $('#results').html(data);
+      });
+      return false;
+    });
+  });
